@@ -155,6 +155,7 @@ const NerdxPublish = (() => {
     <meta name="twitter:description" content="${metaDesc}">
     <link rel="icon" href="${depth}favicon.ico">
     <link rel="stylesheet" href="${depth}assets/css/style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7147597064955591" crossorigin="anonymous"></script>
     <script type="application/ld+json">
     ${JSON.stringify({
         "@context": "https://schema.org",
