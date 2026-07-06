@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Novo Artigo - Nerd-X Studio</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/6b8d4b67f7.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <h2>Nerd-X Studio</h2>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            <i class="fas fa-chart-line"></i>
+            Dashboard
+        </a>
+
+        <a href="novo.html" class="active">
+            <i class="fas fa-file-circle-plus"></i>
+            Novo Artigo
+        </a>
+
+        <a href="editar.html">
+            <i class="fas fa-pen-to-square"></i>
+            Editar Artigos
+        </a>
+
+        <a href="config.html">
+            <i class="fas fa-gear"></i>
+            Configurações
+        </a>
+
+    </nav>
+
+</div>
+
+<div class="content">
+
+<header>
+
+<h1>Novo Artigo</h1>
+
+<p>Preencha os dados do novo artigo. Ao publicar, o painel gera os arquivos reais do site (artigo + categoria + lista de posts) para você baixar e subir no GitHub.</p>
+
+</header>
+
+<div id="status" class="status-box" style="display:none;"></div>
+
+<form id="postForm">
+
+<div class="form-group">
+
+<label>Título</label>
+
+<input
+type="text"
+id="titulo"
+placeholder="Digite o título do artigo"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Slug (usado na URL)</label>
+
+<input
+type="text"
+id="slug"
+placeholder="gerado automaticamente a partir do título">
+
+</div>
+
+<div class="form-group">
+
+<label>Categoria</label>
+
+<select id="categoria">
+
+<option>Notícias</option>
+
+<option>Marvel</option>
+
+<option>DC</option>
+
+<option>Tecnologia</option>
+
+<option>Ficção Científica</option>
+
+<option>Reviews</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Autor</label>
+
+<input
+type="text"
+id="autor"
+value="Nerd-X">
+
+</div>
+
+<div class="form-group">
+
+<label>Imagem de capa</label>
+
+<input
+type="file"
+id="imagem"
+accept="image/*">
+
+<div id="imagemPreview" class="image-preview"></div>
+
+</div>
+
+<div class="form-group">
+
+<label>Resumo</label>
+
+<textarea
+id="descricao"
+rows="4"
+placeholder="Resumo do artigo (aparece nos cards e no compartilhamento)"></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>Conteúdo</label>
+
+<textarea
+id="conteudo"
+rows="18"
+placeholder="Escreva seu artigo... Deixe uma linha em branco entre parágrafos. Use ## para subtítulos, - para listas, **texto** para negrito. Para links: cole a URL direto (https://site.com) ou use [texto do link](https://site.com) se quiser um texto personalizado."></textarea>
+
+</div>
+
+<h2 style="margin-top:40px;">SEO</h2>
+
+<div class="form-group">
+
+<label>Meta Title</label>
+
+<input
+type="text"
+id="seoTitle"
+placeholder="Se vazio, usa o título do artigo">
+
+</div>
+
+<div class="form-group">
+
+<label>Meta Description</label>
+
+<textarea
+id="seoDescription"
+rows="3"
+placeholder="Se vazio, usa o resumo"></textarea>
+
+</div>
+
+<button
+type="submit"
+class="button">
+
+Publicar Artigo
+
+</button>
+
+</form>
+
+</div>
+
+<script src="js/publish-engine.js"></script>
+<script src="js/novo.js"></script>
+
+</body>
+
+</html>

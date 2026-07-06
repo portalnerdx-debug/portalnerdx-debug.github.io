@@ -1,0 +1,12 @@
+/* ================= RESPONSIVO GERAL ================= */
+@media (max-width: 1024px) {
+    :root { --header-height: 68px; }
+    section { padding-block: var(--space-8); }
+}
+
+@media (max-width: 640px) {
+    .container { padding-inline: var(--space-4); }
+    .section-title { font-size: var(--fs-4xl); }
+    .news-content { padding: var(--space-5); }
+    .footer-bottom { flex-direction: column; text-align: center; }
+}

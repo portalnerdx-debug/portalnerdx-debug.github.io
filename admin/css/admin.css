@@ -1,0 +1,603 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#0f172a;
+    --sidebar:#111827;
+    --card:#1e293b;
+    --border:#334155;
+    --primary:#3b82f6;
+    --primary-hover:#2563eb;
+    --text:#f8fafc;
+    --text2:#94a3b8;
+    --success:#22c55e;
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+    width:260px;
+
+    background:var(--sidebar);
+
+    border-right:1px solid var(--border);
+
+    position:fixed;
+
+    left:0;
+    top:0;
+    bottom:0;
+
+}
+
+.logo{
+
+    padding:30px;
+
+    text-align:center;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.logo h2{
+
+    color:white;
+
+    font-size:24px;
+
+}
+
+.sidebar nav{
+
+    margin-top:20px;
+
+}
+
+.sidebar nav a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+    color:var(--text2);
+
+    padding:16px 25px;
+
+    transition:.25s;
+
+}
+
+.sidebar nav a:hover{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+.sidebar nav a.active{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* Conteúdo */
+
+.content{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    padding:40px;
+
+}
+
+header{
+
+    margin-bottom:35px;
+
+}
+
+header h1{
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+}
+
+header p{
+
+    color:var(--text2);
+
+}
+
+/* Cards */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    padding:25px;
+
+}
+
+.card h3{
+
+    color:var(--text2);
+
+    font-size:16px;
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    font-size:40px;
+
+    font-weight:700;
+
+}
+
+/* Botões */
+
+.actions{
+
+    display:flex;
+
+    gap:15px;
+
+    margin:35px 0;
+
+}
+
+.button{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:14px 24px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.button:hover{
+
+    background:var(--primary-hover);
+
+}
+
+.button.secondary{
+
+    background:#374151;
+
+}
+
+.button.secondary:hover{
+
+    background:#4b5563;
+
+}
+
+/* Últimos artigos */
+
+.recent{
+
+    background:var(--card);
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    padding:25px;
+
+}
+
+.recent h2{
+
+    margin-bottom:20px;
+
+}
+
+#recentPosts{
+
+    color:var(--text2);
+
+}
+
+/* Responsivo */
+
+@media(max-width:900px){
+
+.sidebar{
+
+    width:100%;
+
+    height:auto;
+
+    position:relative;
+
+}
+
+.content{
+
+    margin-left:0;
+
+    width:100%;
+
+}
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.actions{
+
+    flex-direction:column;
+
+}
+
+}
+
+.recent-post{
+
+    padding:15px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.recent-post:last-child{
+
+    border:none;
+
+}
+
+.recent-post h3{
+
+    font-size:17px;
+
+    margin-bottom:5px;
+
+}
+
+.recent-post small{
+
+    color:var(--text2);
+
+}
+
+form{
+
+    background:var(--card);
+
+    padding:30px;
+
+    border-radius:15px;
+
+    border:1px solid var(--border);
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:20px;
+
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    background:#0f172a;
+
+    color:white;
+
+    border:1px solid var(--border);
+
+    padding:14px;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    outline:none;
+
+}
+
+.form-group textarea{
+
+    resize:vertical;
+
+}
+
+/* Status box (feedback de publicação) */
+
+.status-box{
+
+    padding:18px 22px;
+
+    border-radius:12px;
+
+    margin-bottom:25px;
+
+    border:1px solid var(--border);
+
+    line-height:1.6;
+
+}
+
+.status-box.success{
+
+    background:rgba(34,197,94,0.1);
+
+    border-color:var(--success);
+
+    color:var(--text);
+
+}
+
+.status-box.error{
+
+    background:rgba(239,68,68,0.1);
+
+    border-color:#ef4444;
+
+    color:var(--text);
+
+}
+
+.status-box ul{
+
+    margin:10px 0 10px 20px;
+
+}
+
+.status-box code{
+
+    background:rgba(255,255,255,0.08);
+
+    padding:2px 6px;
+
+    border-radius:4px;
+
+    font-size:13px;
+
+}
+
+/* Preview de imagem */
+
+.image-preview{
+
+    margin-top:12px;
+
+}
+
+.image-preview img{
+
+    max-width:100%;
+
+    max-height:220px;
+
+    border-radius:10px;
+
+    border:1px solid var(--border);
+
+    object-fit:cover;
+
+}
+
+/* Lista de artigos (editar.html) */
+
+.post-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:16px;
+
+}
+
+.post-row-main{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:14px;
+
+}
+
+.post-row-check{
+
+    margin-top:4px;
+
+    width:18px;
+
+    height:18px;
+
+    accent-color:var(--primary);
+
+    cursor:pointer;
+
+    flex-shrink:0;
+
+}
+
+.post-row-actions{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-shrink:0;
+
+}
+
+/* Toolbar de seleção em massa */
+
+.bulk-toolbar{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:14px 18px;
+
+    margin-bottom:18px;
+
+}
+
+.bulk-select-all{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    user-select:none;
+
+}
+
+.bulk-select-all input{
+
+    width:18px;
+
+    height:18px;
+
+    accent-color:var(--primary);
+
+    cursor:pointer;
+
+}
+
+.bulk-count{
+
+    color:var(--text2);
+
+    font-size:14px;
+
+    margin-right:auto;
+
+}
+
+.button.danger:disabled{
+
+    background:#4b5563;
+
+    cursor:not-allowed;
+
+    opacity:.6;
+
+}
+
+.button.danger{
+
+    background:#ef4444;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+}
+
+.button.danger:hover{
+
+    background:#dc2626;
+
+}
+
+@media(max-width:700px){
+
+.post-row{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+}

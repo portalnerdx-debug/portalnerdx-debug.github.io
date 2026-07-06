@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Configurações - Nerd-X Studio</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/6b8d4b67f7.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo"><h2>Nerd-X Studio</h2></div>
+    <nav>
+        <a href="index.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+        <a href="novo.html"><i class="fas fa-file-circle-plus"></i> Novo Artigo</a>
+        <a href="editar.html"><i class="fas fa-pen-to-square"></i> Editar Artigos</a>
+        <a href="config.html" class="active"><i class="fas fa-gear"></i> Configurações</a>
+    </nav>
+</div>
+
+<div class="content">
+
+<header>
+    <h1>Configurações</h1>
+    <p>Dados gerais do site e redes sociais.</p>
+</header>
+
+<div id="status" class="status-box" style="display:none;"></div>
+
+<form id="configForm">
+
+    <div class="form-group">
+        <label>Título do site</label>
+        <input type="text" id="siteTitle" placeholder="Nerd X | O universo geek sem limites">
+    </div>
+
+    <div class="form-group">
+        <label>Descrição do site</label>
+        <textarea id="siteDescription" rows="3" placeholder="Notícias, reviews, teorias e análises sobre Marvel, DC, tecnologia e ficção científica."></textarea>
+    </div>
+
+    <h2 style="margin-top:30px;">Redes sociais</h2>
+
+    <div class="form-group">
+        <label>Instagram (URL)</label>
+        <input type="text" id="instagram" placeholder="https://instagram.com/nerdx">
+    </div>
+
+    <div class="form-group">
+        <label>X / Twitter (URL)</label>
+        <input type="text" id="twitter" placeholder="https://x.com/nerdx">
+    </div>
+
+    <div class="form-group">
+        <label>YouTube (URL)</label>
+        <input type="text" id="youtube" placeholder="https://youtube.com/@nerdx">
+    </div>
+
+    <div class="form-group">
+        <label>Discord (URL)</label>
+        <input type="text" id="discord" placeholder="https://discord.gg/nerdx">
+    </div>
+
+    <button type="submit" class="button">Salvar Configurações</button>
+
+</form>
+
+</div>
+
+<script src="js/publish-engine.js"></script>
+<script src="js/config.js"></script>
+
+</body>
+</html>

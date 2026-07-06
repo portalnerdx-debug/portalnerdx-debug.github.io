@@ -1,0 +1,89 @@
+/* ================= HERO ================= */
+.hero {
+    position: relative;
+    min-height: 560px;
+    display: flex;
+    align-items: flex-end;
+    clip-path: var(--clip-panel);
+    background:
+        linear-gradient(180deg, rgba(13,15,20,0.35) 0%, rgba(13,15,20,0.92) 88%),
+        radial-gradient(circle at 15% 20%, rgba(255,61,87,0.35), transparent 45%),
+        radial-gradient(circle at 85% 0%, rgba(47,230,198,0.28), transparent 45%),
+        repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 14px),
+        var(--color-panel);
+    overflow: hidden;
+}
+
+.hero-cover {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    /* Contraste garantido: independentemente da cor/brilho da foto de fundo,
+       a área onde o texto fica (rodapé do hero) precisa continuar escura.
+       Um degradê diagonal (efeito visual) + um degradê vertical forte
+       colado no rodapé asseguram isso sempre, não só quando a foto ajuda. */
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(120deg, rgba(13,15,20,0.55) 0%, transparent 55%),
+        linear-gradient(0deg, rgba(6,7,10,0.96) 0%, rgba(6,7,10,0.78) 32%, rgba(6,7,10,0.25) 62%, transparent 85%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding-block: var(--space-10) var(--space-10);
+    display: grid;
+}
+
+.hero-info { max-width: 720px; }
+
+.hero-category {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--color-ink);
+    background: var(--color-signal);
+    padding: var(--space-2) var(--space-3);
+    clip-path: var(--clip-tag);
+    margin-bottom: var(--space-5);
+}
+
+.hero-info h1 {
+    font-size: var(--fs-9xl);
+    text-transform: uppercase;
+    /* Branco fixo (não depende do tema) + sombra de texto: garante leitura
+       mesmo em fotos claras, sem depender só do overlay atrás. */
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.35), 0 8px 24px rgba(0,0,0,0.55);
+    margin-bottom: var(--space-5);
+    text-wrap: balance;
+}
+
+.hero-info p {
+    font-size: var(--fs-lg);
+    color: #DADEE8;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+    max-width: 58ch;
+    margin-bottom: var(--space-6);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+@media (max-width: 640px) {
+    .hero { min-height: 460px; clip-path: none; }
+    .hero-info h1 { font-size: var(--fs-6xl); }
+}

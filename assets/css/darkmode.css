@@ -1,0 +1,29 @@
+/* =================================================================
+   DARK / LIGHT MODE
+   O tema padrão do Nerd X já é escuro ("modo leitura de quadrinho").
+   Este arquivo cobre o MODO CLARO, ativado via [data-theme="light"]
+   no <html> (ver assets/js/theme.js).
+   ================================================================= */
+
+[data-theme="light"] .hero {
+    background:
+        linear-gradient(180deg, rgba(245,245,247,0.2) 0%, rgba(245,245,247,0.9) 88%),
+        radial-gradient(circle at 15% 20%, rgba(255,61,87,0.18), transparent 45%),
+        radial-gradient(circle at 85% 0%, rgba(47,230,198,0.16), transparent 45%),
+        var(--color-panel-raised-light);
+}
+
+[data-theme="light"] .theme-btn .icon-sun { display: none; }
+[data-theme="light"] .theme-btn .icon-moon { display: inline; }
+.theme-btn .icon-moon { display: none; }
+
+[data-theme="light"] .news-image,
+[data-theme="light"] .post-card .news-image {
+    background:
+        linear-gradient(135deg, rgba(255,61,87,0.18), rgba(47,230,198,0.16)),
+        var(--color-panel-raised-light);
+}
+
+[data-theme="light"] header {
+    background: color-mix(in srgb, var(--color-ink) 88%, transparent);
+}

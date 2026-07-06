@@ -1,0 +1,49 @@
+/* ================= BUTTONS ================= */
+.btn, .btn-outline, .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.04em;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-sm);
+    transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+
+.btn {
+    background: var(--color-signal);
+    color: #fff;
+}
+.btn:hover, .btn:focus-visible {
+    background: var(--color-signal-dim);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border-color: var(--color-border);
+    color: var(--color-paper);
+}
+.btn-outline:hover, .btn-outline:focus-visible {
+    border-color: var(--color-volt);
+    color: var(--color-volt);
+    transform: translateY(-2px);
+}
+
+.btn-ghost {
+    color: var(--color-dust);
+    padding-inline: var(--space-3);
+}
+.btn-ghost:hover, .btn-ghost:focus-visible {
+    color: var(--color-paper);
+}
+
+.btn-block { width: 100%; justify-content: center; }
+
+button:disabled, .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}

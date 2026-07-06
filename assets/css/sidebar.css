@@ -1,0 +1,16 @@
+/* ================= SIDEBAR (uso futuro em artigos/categorias) ================= */
+.sidebar { display: flex; flex-direction: column; gap: var(--space-6); }
+.sidebar-widget {
+    background: var(--color-panel);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+}
+.sidebar-widget h5 {
+    font-family: var(--font-mono); font-size: var(--fs-xs);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--color-dust); margin-bottom: var(--space-4);
+}
+.sidebar-widget ul { display: flex; flex-direction: column; gap: var(--space-3); }
+.sidebar-widget a { color: var(--color-dust); transition: color var(--transition-fast); }
+.sidebar-widget a:hover { color: var(--color-paper); }

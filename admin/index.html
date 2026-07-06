@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nerd-X Studio</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/6b8d4b67f7.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <h2>Nerd-X Studio</h2>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html" class="active">
+
+            <i class="fas fa-chart-line"></i>
+
+            Dashboard
+
+        </a>
+
+        <a href="novo.html">
+
+            <i class="fas fa-file-circle-plus"></i>
+
+            Novo Artigo
+
+        </a>
+
+        <a href="editar.html">
+
+            <i class="fas fa-pen-to-square"></i>
+
+            Editar Artigos
+
+        </a>
+
+        <a href="config.html">
+
+            <i class="fas fa-gear"></i>
+
+            Configurações
+
+        </a>
+
+    </nav>
+
+</div>
+
+<div class="content">
+
+<header>
+
+<h1>Dashboard</h1>
+
+<p>Bem-vindo ao Nerd-X Studio.</p>
+
+</header>
+
+<section class="cards">
+
+<div class="card">
+
+<h3>Artigos</h3>
+
+<p id="totalPosts">0</p>
+
+</div>
+
+<div class="card">
+
+<h3>Categorias</h3>
+
+<p id="totalCategorias">0</p>
+
+</div>
+
+<div class="card">
+
+<h3>Autores</h3>
+
+<p id="totalAutores">0</p>
+
+</div>
+
+</section>
+
+<section class="actions">
+
+<a href="novo.html" class="button">
+
+<i class="fas fa-plus"></i>
+
+Novo Artigo
+
+</a>
+
+<a href="editar.html" class="button secondary">
+
+<i class="fas fa-list"></i>
+
+Gerenciar Artigos
+
+</a>
+
+</section>
+
+<section class="recent">
+
+<h2>Últimos Artigos</h2>
+
+<div id="recentPosts">
+
+Nenhum artigo encontrado.
+
+</div>
+
+</section>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>

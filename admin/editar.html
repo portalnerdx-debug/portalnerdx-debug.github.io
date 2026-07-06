@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Editar Artigos - Nerd-X Studio</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/6b8d4b67f7.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo"><h2>Nerd-X Studio</h2></div>
+    <nav>
+        <a href="index.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+        <a href="novo.html"><i class="fas fa-file-circle-plus"></i> Novo Artigo</a>
+        <a href="editar.html" class="active"><i class="fas fa-pen-to-square"></i> Editar Artigos</a>
+        <a href="config.html"><i class="fas fa-gear"></i> Configurações</a>
+    </nav>
+</div>
+
+<div class="content">
+
+<header>
+    <h1>Editar Artigos</h1>
+    <p>Lista os artigos publicados a partir de <code>api/posts.json</code> do site ao vivo. Abra esta página no site publicado (não localmente) para os dados carregarem.</p>
+</header>
+
+<div id="status" class="status-box" style="display:none;"></div>
+
+<section class="recent">
+    <h2>Artigos publicados</h2>
+
+    <div id="bulkToolbar" class="bulk-toolbar" style="display:none;">
+        <label class="bulk-select-all">
+            <input type="checkbox" id="selectAll">
+            Selecionar todos
+        </label>
+        <span id="selectedCount" class="bulk-count">0 selecionados</span>
+        <button id="bulkDeleteBtn" class="button danger" type="button" disabled>
+            <i class="fas fa-trash"></i> Excluir selecionados
+        </button>
+    </div>
+
+    <div id="postList">Carregando...</div>
+</section>
+
+</div>
+
+<script src="js/publish-engine.js"></script>
+<script src="js/editar.js"></script>
+
+</body>
+</html>

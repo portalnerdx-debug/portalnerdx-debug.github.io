@@ -1,0 +1,71 @@
+/* ================= LAYOUT DE ARTIGO =================
+   Título e foto de capa vivem juntos dentro de .article-hero, um bloco
+   normal do fluxo da página (position: relative — nunca fixed/sticky).
+   Isso garante, por construção, que o título NUNCA fica sobre o corpo do
+   artigo nem sobre a própria foto além do necessário: ao rolar a página,
+   o hero sai de tela como qualquer outro elemento e o conteúdo do artigo
+   (.article-body) aparece na sequência, sem nenhuma sobreposição. */
+.article-hero {
+    position: relative;      /* nunca fixed/sticky: precisa rolar com a página */
+    isolation: isolate;      /* cria um novo contexto de empilhamento próprio,
+                                 evitando qualquer conflito de z-index com o
+                                 header/menu fixo do site */
+    min-height: 420px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    margin-block: var(--space-6) var(--space-8);
+    background: linear-gradient(135deg, rgba(255,61,87,0.3), rgba(47,230,198,0.2)), var(--color-panel-raised);
+}
+.article-hero-cover {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.article-hero-scrim {
+    /* Camada de contraste garantida atrás do título, igual à usada no
+       destaque da home: funciona com qualquer foto, clara ou escura. */
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(6,7,10,0.95) 0%, rgba(6,7,10,0.75) 35%, rgba(6,7,10,0.15) 70%, transparent 90%);
+    pointer-events: none;
+}
+.article-hero-content {
+    position: relative;
+    z-index: 1;
+    padding: var(--space-8) var(--space-6);
+    width: 100%;
+}
+.article-hero-content h1 {
+    font-size: var(--fs-9xl);
+    text-transform: uppercase;
+    max-width: 24ch;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.6);
+}
+.article-meta {
+    display: flex; flex-wrap: wrap; gap: var(--space-4);
+    font-family: var(--font-mono); font-size: var(--fs-sm);
+    margin-top: var(--space-5);
+}
+.article-hero-content .article-meta {
+    color: #DADEE8;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+}
+.article-body { max-width: 72ch; font-size: var(--fs-lg); margin-top: var(--space-2); }
+
+@media (max-width: 640px) {
+    .article-hero { min-height: 320px; border-radius: var(--radius-sm); }
+    .article-hero-content h1 { font-size: var(--fs-6xl); }
+}
+.article-body p { margin-bottom: var(--space-5); color: var(--color-paper); }
+.article-body h2 { font-size: var(--fs-4xl); text-transform: uppercase; margin-block: var(--space-8) var(--space-4); }
+.article-body h3 { font-size: var(--fs-2xl); text-transform: uppercase; margin-block: var(--space-6) var(--space-3); color: var(--color-paper); }
+.article-body ul { margin: 0 0 var(--space-5) var(--space-5); list-style: disc; }
+.article-body li { margin-bottom: var(--space-2); color: var(--color-paper); }
+.article-body a { color: var(--color-volt); text-decoration: underline; text-underline-offset: 3px; }
+.article-body a:hover, .article-body a:focus-visible { color: var(--color-signal); }
+.article-share { display: flex; gap: var(--space-3); margin-block: var(--space-8); }
