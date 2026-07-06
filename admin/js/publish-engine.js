@@ -135,7 +135,7 @@ const NerdxPublish = (() => {
     ];
 
     function headBlock(post, depth) {
-        const url = `https://nerdx.com.br/categorias/${post.categoriaSlug}/${post.slug}.html`;
+        const url = `https://portalnerdx-debug.github.io/categorias/${post.categoriaSlug}/${post.slug}.html`;
         const metaTitle = post.seoTitle || `${post.titulo} | Nerd X`;
         const metaDesc = escapeHtml(post.seoDescription || post.resumo || plainTextExcerpt(post.conteudo));
         return `<meta charset="UTF-8">
