@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://portalnerdx-debug.github.io/sitemap.xml
